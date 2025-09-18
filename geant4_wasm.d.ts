@@ -206,38 +206,9 @@ declare class FSNode {
 interface WasmModule {
 }
 
-export interface ClassHandle {
-  isAliasOf(other: ClassHandle): boolean;
-  delete(): void;
-  deleteLater(): this;
-  isDeleted(): boolean;
-  // @ts-ignore - If targeting lower than ESNext, this symbol might not exist.
-  [Symbol.dispose](): void;
-  clone(): this;
-}
-export interface TestClass extends ClassHandle {
-  testMethod(): number;
-  complicatedFunction(_0: vector_int): number;
-}
-
-export interface vector_int extends ClassHandle {
-  push_back(_0: number): void;
-  resize(_0: number, _1: number): void;
-  size(): number;
-  get(_0: number): number | undefined;
-  set(_0: number, _1: number): boolean;
-}
-
+type EmbindString = ArrayBuffer|Uint8Array|Uint8ClampedArray|Int8Array|string;
 interface EmbindModule {
-  TestClass: {
-    new(_0: number, _1: number): TestClass;
-  };
-  vector_int: {
-    new(): vector_int;
-  };
-  Geant4_init(): number;
-  Geant4_GDML(): number;
-  Geant4_run(): number;
+  Geant4GDMRun(_0: EmbindString, _1: EmbindString): number;
 }
 
 export type MainModule = WasmModule & typeof RuntimeExports & EmbindModule;
