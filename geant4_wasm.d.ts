@@ -153,6 +153,8 @@ declare namespace RuntimeExports {
         export function mmapAlloc(): void;
         export function standardizePath(): void;
     }
+    /** @param {string=} sig */
+    function addFunction(func: any, sig?: string | undefined): any;
     function FS_createPath(...args: any[]): any;
     function FS_createDataFile(...args: any[]): any;
     function FS_preloadFile(parent: any, name: any, url: any, canRead: any, canWrite: any, dontCreateFile: any, canOwn: any, preFinish: any): Promise<void>;
@@ -208,6 +210,7 @@ interface WasmModule {
 
 type EmbindString = ArrayBuffer|Uint8Array|Uint8ClampedArray|Int8Array|string;
 interface EmbindModule {
+  Geant4SetProgressFunction(_0: bigint): void;
   Geant4GDMRun(_0: EmbindString, _1: EmbindString): number;
 }
 
