@@ -16,7 +16,7 @@ return new Promise((loadDataResolve, loadDataReject) => {
         // web worker
         PACKAGE_PATH = encodeURIComponent(location.pathname.substring(0, location.pathname.lastIndexOf('/')) + '/');
       }
-      var PACKAGE_NAME = '/memfs/17891310/geant-web-application/build/data/G4NDL4.7.1.data';
+      var PACKAGE_NAME = '/memfs/18333901/geant-web-application/build/data/G4NDL4.7.1.data';
       var REMOTE_PACKAGE_BASE = 'G4NDL4.7.1.data';
       var REMOTE_PACKAGE_NAME = Module['locateFile']?.(REMOTE_PACKAGE_BASE, '') ?? REMOTE_PACKAGE_BASE;
       var REMOTE_PACKAGE_SIZE = metadata['remote_package_size'];
@@ -340,10 +340,10 @@ loadDataResolve();
           var files = metadata['files'];
           for (var i = 0; i < files.length; ++i) {
             DataRequest.prototype.requests[files[i].filename].onload();
-          }          Module['removeRunDependency']('datafile_/memfs/17891310/geant-web-application/build/data/G4NDL4.7.1.data');
+          }          Module['removeRunDependency']('datafile_/memfs/18333901/geant-web-application/build/data/G4NDL4.7.1.data');
 
       }
-      Module['addRunDependency']('datafile_/memfs/17891310/geant-web-application/build/data/G4NDL4.7.1.data');
+      Module['addRunDependency']('datafile_/memfs/18333901/geant-web-application/build/data/G4NDL4.7.1.data');
 
       Module['preloadResults'] ??= {};
 
